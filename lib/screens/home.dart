@@ -136,8 +136,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   alignment: Alignment.bottomCenter,
                   child: Column(
                     children: [
-                      ElevatedButton(
-                        onPressed: () {},
+                      InkWell(
+                        onTap: () {},
                         child: Container(
                           height: 60,
                           width: double.infinity,
