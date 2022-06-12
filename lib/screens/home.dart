@@ -37,11 +37,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 10,
                     ),
                     Text(
-                      'We share all event like charity,\nworkshop, bold drive, etc.',
+                      'We share all events like charity,\nworkshop, blood drive, etc.',
                       style: TextStyle(
                           fontSize: 15,
                           color: Colors.grey[400],
-                          fontWeight: FontWeight.w800
+                          fontWeight: FontWeight.w500
                           // fontFamily: 'rubikBold',
                           ),
                     ),
@@ -131,31 +131,62 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                    top: 20, bottom: 20, left: 50, right: 50),
-                child: Container(
-                  height: 60,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Color(0xFF1d1e24),
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.shade400,
-                        blurRadius: 10,
-                        spreadRadius: 2,
-                      )
-                    ],
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Register',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontFamily: 'rubikBold',
+                padding: const EdgeInsets.only(top: 90, left: 50, right: 50),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Column(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Container(
+                          height: 60,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Color(0xFF1d1e24),
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.shade400,
+                                blurRadius: 10,
+                                spreadRadius: 2,
+                              )
+                            ],
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Register',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: 'rubikBold',
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 20, top: 30),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'already have an account? ',
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Color(0xFFacacac),
+                              ),
+                            ),
+                            Text(
+                              'Sign in',
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Color(0xFFf29611),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               )
