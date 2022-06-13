@@ -1,22 +1,26 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:event_finder_ui/constants/constant.dart';
+import 'package:event_finder_ui/screens/home_page.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class Register extends StatelessWidget {
+  const Register({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    print("-------- Home Screen run -----------");
+    print("-------- Register Page -----------");
     return Scaffold(
       body: Stack(
         children: [
+          // background image...
+          SizedBox(
+            height: double.infinity,
+            width: double.infinity,
+            child: Image.asset('assets/images/bg.png'),
+          ),
+
+          // UI parts...
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -25,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // Title text...
                     Text(
                       'Find Intrested\nEvent to join',
                       style: TextStyle(
@@ -36,6 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: 10,
                     ),
+
+                    // dummy text...
                     Text(
                       'We share all events like charity,\nworkshop, blood drive, etc.',
                       style: TextStyle(
@@ -48,6 +55,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
+
+              // midddle images...
               Padding(
                 padding: const EdgeInsets.only(top: 30),
                 child: Stack(
@@ -130,6 +139,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
+
+              // register button...
               Padding(
                 padding: const EdgeInsets.only(top: 90, left: 50, right: 50),
                 child: Align(
@@ -137,7 +148,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomePage(),
+                            ),
+                          );
+                        },
                         child: Container(
                           height: 60,
                           width: double.infinity,
@@ -164,6 +182,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
+
+                      // sign in part...
                       Padding(
                         padding: const EdgeInsets.only(bottom: 20, top: 30),
                         child: Row(

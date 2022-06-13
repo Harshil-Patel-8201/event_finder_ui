@@ -1,4 +1,4 @@
-import 'package:event_finder_ui/screens/home.dart';
+import 'package:event_finder_ui/screens/register.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.cyan,
       ),
-      home: const HomeScreen(),
+      home: const Register(),
     );
   }
 }
