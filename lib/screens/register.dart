@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:event_finder_ui/constants/constant.dart';
+import 'package:event_finder_ui/constants/decorations.dart';
+import 'package:event_finder_ui/constants/links.dart';
+import 'package:event_finder_ui/constants/widgets.dart';
 import 'package:event_finder_ui/screens/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -61,88 +63,20 @@ class Register extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 30),
                 child: Stack(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Container(
-                          height: 80,
-                          width: 80,
-                          decoration: boxDecoration,
-                          child: Image.network(
-                            ImgLinks().netImg1,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 50, top: 30),
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Container(
-                          height: 55,
-                          width: 55,
-                          decoration: boxDecoration,
-                          child: Image.network(
-                            ImgLinks().netImg2,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 0, top: 130),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Container(
-                          height: 80,
-                          width: 80,
-                          decoration: boxDecoration,
-                          child: Image.network(
-                            ImgLinks().netImg3,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50, top: 290),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Container(
-                          height: 80,
-                          width: 80,
-                          decoration: boxDecoration,
-                          child: Image.network(
-                            ImgLinks().netImg4,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 80, top: 250),
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Container(
-                          height: 55,
-                          width: 55,
-                          decoration: boxDecoration,
-                          child: Image.network(
-                            ImgLinks().netImg5,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
+                    //          T   L  R   H  I
+                    registerImg(25, 50, 80, 1),
+                    registerImg(50, 230, 55, 2),
+                    registerImg(150, 130, 80, 3),
+                    registerImg(250, 210, 80, 4),
+                    registerImg(350, 50, 55, 5),
                   ],
                 ),
               ),
 
               // register button...
               Padding(
-                padding: const EdgeInsets.only(top: 90, left: 50, right: 50),
+                padding: const EdgeInsets.only(
+                    bottom: 10, left: 50, right: 50, top: 50),
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Column(

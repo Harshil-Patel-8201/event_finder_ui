@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 
-import 'package:event_finder_ui/constants/constant.dart';
+import 'package:event_finder_ui/constants/decorations.dart';
+import 'package:event_finder_ui/constants/widgets.dart';
 import "package:flutter/material.dart";
 
 class HomePage extends StatefulWidget {
@@ -19,97 +20,99 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           // profile container...
-          Padding(
-            padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
-            child: Container(
-              height: 60,
-              width: double.infinity,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    height: 60,
-                    width: 200,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: [
-                        // loaction section...
-                        Text(
-                          'Current location',
-                          style: TextStyle(
-                            color: Color(0xffbbbbbb),
-                            fontSize: 15,
-                          ),
-                        ),
-                        Row(
-                          // ignore: prefer_const_literals_to_create_immutables
-                          children: [
-                            Icon(
-                              Icons.location_on,
-                              color: Color(0xffff6b01),
-                              size: 15,
-                            ),
-                            Text(
-                              'Surakarta, INA',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 17,
-                                fontFamily: 'rubikBold',
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  // image profile part...
-                  Container(
-                    height: 60,
-                    width: 50,
-                    child: Stack(
-                      children: [
-                        Container(
-                          height: 60,
-                          width: 50,
-                          child: CircleAvatar(
-                            backgroundImage: AssetImage(
-                              'assets/images/user.png',
+          InkWell(
+            onTap: () {},
+            child: Padding(
+              padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+              child: Container(
+                height: 50,
+                width: double.infinity,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 60,
+                      width: 200,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          // loaction section...
+                          Text(
+                            'Current location',
+                            style: TextStyle(
+                              color: Color(0xffbbbbbb),
+                              fontSize: 16,
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 2, top: 8),
-                          child: Align(
-                            alignment: Alignment.topRight,
-                            child: Container(
-                              height: 10,
-                              width: 10,
-                              decoration: BoxDecoration(
+                          Row(
+                            // ignore: prefer_const_literals_to_create_immutables
+                            children: [
+                              Icon(
+                                Icons.location_on,
                                 color: Color(0xffff6b01),
-                                shape: BoxShape.circle,
+                                size: 15,
+                              ),
+                              Text(
+                                'Surakarta, INA',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                  fontFamily: 'rubikBold',
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    // image profile part...
+                    Container(
+                      height: 60,
+                      width: 50,
+                      child: Stack(
+                        children: [
+                          Container(
+                            height: 60,
+                            width: 50,
+                            child: CircleAvatar(
+                              backgroundImage: AssetImage(
+                                'assets/images/user.png',
                               ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
+                          Padding(
+                            padding: const EdgeInsets.only(right: 2, top: 8),
+                            child: Align(
+                              alignment: Alignment.topRight,
+                              child: Container(
+                                height: 10,
+                                width: 10,
+                                decoration: BoxDecoration(
+                                  color: Color(0xffff6b01),
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ),
+
           // serach box...
           Padding(
-            padding:
-                const EdgeInsets.only(top: 20, bottom: 20, left: 30, right: 30),
+            padding: const EdgeInsets.only(top: 20, left: 30, right: 30),
             child: Container(
               height: 60,
               width: double.infinity,
               decoration: boxShadow.copyWith(color: Colors.white),
               child: Row(
-                // ignore: prefer_const_literals_to_create_immutables
                 children: [
                   SizedBox(
                     width: 10,
@@ -134,11 +137,20 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
 
-          Container(
-            height: 300,
-            width: 300,
-            color: Colors.blue,
-          )
+          // Middle big container...
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Row(
+                children: [
+                  // main container..
+                  middleContainer('8', '43'),
+                  middleContainer('10', '30')
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
