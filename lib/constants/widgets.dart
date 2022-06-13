@@ -16,9 +16,12 @@ Widget registerImg(
       height: conHeight,
       width: conHeight,
       decoration: boxDecoration,
-      child: Image.asset(
-        'assets/images/img$imgNum.jpg',
-        fit: BoxFit.cover,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: Image.asset(
+          'assets/images/img$imgNum.jpg',
+          fit: BoxFit.cover,
+        ),
       ),
     ),
   );
@@ -90,10 +93,13 @@ Widget middleContainer(String date, String peopleNumber) {
                       ],
                     ),
                   ),
-                  Image.asset(
-                    'assets/images/garbage_collector1.png',
-                    height: 250,
-                    fit: BoxFit.fitHeight,
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      'assets/images/garbage_collector1.png',
+                      height: 250,
+                      fit: BoxFit.fitHeight,
+                    ),
                   ),
                 ],
               ),
@@ -116,7 +122,7 @@ Widget middleContainer(String date, String peopleNumber) {
                 SizedBox(width: 20),
                 SizedBox(
                   height: 40,
-                  width: 150,
+                  width: 130,
                   child: ListView.builder(
                     itemCount: imgs.length,
                     scrollDirection: Axis.horizontal,
@@ -141,6 +147,90 @@ Widget middleContainer(String date, String peopleNumber) {
             ),
           ),
         ],
+      ),
+    ),
+  );
+}
+
+Widget eventContainer() {
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+    child: Container(
+      height: 100,
+      width: double.infinity,
+      decoration: boxShadow.copyWith(color: Colors.white),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              height: 80,
+              width: 80,
+              decoration: BoxDecoration(
+                  image: const DecorationImage(
+                      image: AssetImage('assets/images/img2.jpg'),
+                      fit: BoxFit.cover,
+                      filterQuality: FilterQuality.low),
+                  borderRadius: BorderRadius.circular(10)),
+              child: const Center(
+                child: Text(
+                  'Jun\n12',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 60,
+              width: 140,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Volunteer solosup',
+                    style: TextStyle(
+                        fontSize: 17,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    '09:00AM to 03:00PM',
+                    style: TextStyle(
+                        fontSize: 13,
+                        color: Colors.grey[350],
+                        fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    'Surakarta, INA',
+                    style: TextStyle(
+                        fontSize: 13,
+                        color: Colors.grey[350],
+                        fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: 30,
+              width: 70,
+              decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(10)),
+              child: const Center(
+                child: Text(
+                  'Join',
+                  style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     ),
   );

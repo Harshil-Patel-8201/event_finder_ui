@@ -72,79 +72,83 @@ class Register extends StatelessWidget {
                   ],
                 ),
               ),
+            ],
+          ),
 
-              // register button...
-              Padding(
-                padding: const EdgeInsets.only(
-                    bottom: 10, left: 50, right: 50, top: 50),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Column(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => HomePage(),
-                            ),
-                          );
-                        },
-                        child: Container(
-                          height: 60,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: Color(0xFF1d1e24),
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.shade400,
-                                blurRadius: 10,
-                                spreadRadius: 2,
-                              )
-                            ],
+          // register button...
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                      bottom: 10, left: 50, right: 50, top: 50),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
                           ),
-                          child: Center(
-                            child: Text(
-                              'Register',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontFamily: 'rubikBold',
-                              ),
+                        );
+                      },
+                      child: Container(
+                        height: 60,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF1d1e24),
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade400,
+                              blurRadius: 10,
+                              spreadRadius: 2,
+                            )
+                          ],
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Register',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontFamily: 'rubikBold',
                             ),
                           ),
                         ),
                       ),
+                    ),
+                  ),
+                ),
 
-                      // sign in part...
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 20, top: 30),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'already have an account? ',
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Color(0xFFacacac),
-                              ),
-                            ),
-                            Text(
-                              'Sign in',
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Color(0xFFf29611),
-                              ),
-                            ),
-                          ],
+                // sign in part...
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20, top: 30),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'already have an account? ',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Color(0xFFacacac),
+                        ),
+                      ),
+                      Text(
+                        'Sign in',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Color(0xFFf29611),
                         ),
                       ),
                     ],
                   ),
                 ),
-              )
-            ],
+              ],
+            ),
           ),
         ],
       ),
